@@ -15,5 +15,7 @@ public class User {
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
+    // why using Enumerated ?
+    // Enumerated is used to map the enum type attribute in the entity class.
     private Role role;
 }

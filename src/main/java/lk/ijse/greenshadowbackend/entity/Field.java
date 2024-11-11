@@ -33,7 +33,8 @@ public class Field {
     private List<Crop> crop;
 
     @OneToMany(mappedBy = "field", cascade = CascadeType.ALL)
-    @JsonIgnore
+    @JsonIgnore // why using JsonIgnore ?
+    // JsonIgnore is used to ignore the field from being serialized or deserialized.
     private List<Equipment> equipment;
 
     @ManyToMany
