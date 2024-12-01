@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin("*")
 public class UserController {
 
     private final UserBo userBo;
@@ -24,6 +25,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<?> saveUser(@Valid @RequestBody UserDTO user) {
+        System.out.println("controller");
         log.info("Attempting to save user with email: {}", user.getEmail());
         try {
             userBo.saveUser(user);
