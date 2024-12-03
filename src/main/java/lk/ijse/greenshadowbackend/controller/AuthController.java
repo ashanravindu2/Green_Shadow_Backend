@@ -1,7 +1,5 @@
 package lk.ijse.greenshadowbackend.controller;
 
-import jakarta.persistence.Basic;
-import jakarta.persistence.FetchType;
 import jakarta.validation.Valid;
 import lk.ijse.greenshadowbackend.dto.impl.UserDTO;
 import lk.ijse.greenshadowbackend.exception.AlreadyExistsException;

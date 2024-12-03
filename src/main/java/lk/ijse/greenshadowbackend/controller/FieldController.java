@@ -8,14 +8,11 @@ import lk.ijse.greenshadowbackend.util.AppUtil;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.geo.Point;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-
 
 import java.util.List;
 
@@ -40,7 +37,7 @@ public class FieldController {
         logger.info("y"+fieldLocationY +"x"+fieldLocationX);
         FieldDTO fieldDTO = new FieldDTO();
         fieldDTO.setFieldName(fieldName);
-        fieldDTO.setFieldLocation(new Point(fieldLocationX, fieldLocationY));
+        fieldDTO.setFieldLocation(new java.awt.Point((int) fieldLocationX, (int) fieldLocationY));
         fieldDTO.setFieldSize(fieldSize);
         fieldDTO.setImage1(AppUtil.toBase64(image1));
         fieldDTO.setImage2(AppUtil.toBase64(image2));
@@ -73,7 +70,7 @@ public class FieldController {
         FieldDTO fieldDTO = new FieldDTO();
         fieldDTO.setFieldCode(fieldCode);
         fieldDTO.setFieldName(fieldName);
-        fieldDTO.setFieldLocation(new Point(fieldLocationX, fieldLocationY));
+        fieldDTO.setFieldLocation(new java.awt.Point((int) fieldLocationX, (int) fieldLocationY));
         fieldDTO.setFieldSize(fieldSize);
         fieldDTO.setImage1(AppUtil.toBase64(image1));
         fieldDTO.setImage2(AppUtil.toBase64(image2));
