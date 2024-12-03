@@ -1,4 +1,4 @@
-package lk.ijse.greenshadowbackend.configure;
+package lk.ijse.greenshadowbackend.config;
 
 import lk.ijse.greenshadowbackend.service.UserBo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class SecurityConfig {
                 .cors(withDefaults())
                 .authorizeRequests(
                     req ->
-                            req.requestMatchers("v1/auth/**").permitAll()
+                            req.requestMatchers("api/v1/auth/**").permitAll()
                                     .anyRequest()
                                     .authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

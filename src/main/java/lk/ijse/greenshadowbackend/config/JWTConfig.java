@@ -1,4 +1,4 @@
-package lk.ijse.greenshadowbackend.configure;
+package lk.ijse.greenshadowbackend.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

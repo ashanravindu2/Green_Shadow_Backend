@@ -1,5 +1,7 @@
 package lk.ijse.greenshadowbackend.controller;
 
+import jakarta.persistence.Basic;
+import jakarta.persistence.FetchType;
 import jakarta.validation.Valid;
 import lk.ijse.greenshadowbackend.dto.impl.UserDTO;
 import lk.ijse.greenshadowbackend.exception.AlreadyExistsException;
@@ -13,14 +15,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("v1/auth/")
+@RequestMapping("api/v1/auth/")
 @RequiredArgsConstructor
 @CrossOrigin("*")
+
 public class AuthController {
 
     private final AuthenticationService authenticationService;
@@ -49,10 +51,13 @@ public class AuthController {
 
     @PostMapping(value = "signin")
     public ResponseEntity<JwtAuthResponse> signIn(@RequestBody SignIn signIn) {
+
+        System.out.println(signIn.getEmail()+"+"+ signIn.getPassword());
         return ResponseEntity.ok(authenticationService.signIn(signIn));
     }
     @PostMapping("refresh")
     public ResponseEntity<JwtAuthResponse> refreshToken (@RequestParam ("refreshToken") String refreshToken) {
+        System.out.println(refreshToken.getBytes());
         return ResponseEntity.ok(authenticationService.refreshToken(refreshToken));
     }
 

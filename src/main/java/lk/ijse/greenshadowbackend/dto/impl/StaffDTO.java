@@ -31,15 +31,15 @@ public class StaffDTO implements StaffResponse , SuperDto {
     private String gender;
 
     @NotBlank
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "MM-dd-yyyy")
     private String joinedDate;
 
     @NotBlank
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "MM-dd-yyyy")
     private String DOB;
 
     @NotBlank
-    private String addressLine1;
+        private String addressLine1;
 
     @NotBlank
     private String addressLine2;
